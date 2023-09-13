@@ -14,12 +14,14 @@ public class App {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 
         BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
+
         //2.取出bean对象
         User user = (User) context.getBean("user");
 
         User user1 = context.getBean(User.class); //根据Bean类型获取Bean
 
         User user2 = context.getBean("user", User.class);//根据Bean名称和类型获取Bean
+
         //3.使用bean
         System.out.println(user.sayHi());
 
