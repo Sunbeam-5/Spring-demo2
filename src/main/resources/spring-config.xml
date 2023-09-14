@@ -7,4 +7,5 @@
     <bean id = "user" class = "User"></bean>
     <bean id = "articleinfo" class="com.demo.component.ArticleController"></bean>
 
+    <bean id = "myComponent" class="com.demo.component.BeanLifeComponent"  init-method="init"></bean>
 </beans>

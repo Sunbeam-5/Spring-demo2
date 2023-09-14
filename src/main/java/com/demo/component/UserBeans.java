@@ -2,15 +2,19 @@ package com.demo.component;
 
 import com.demo.module.User;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 
 /**
- * 作者：张三
+ * author：张三
  */
 
 @Component
 public class UserBeans {
 
+    @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+    //@Scope("prototype")
     @Bean
     public User user1() {
         User user = new User();
