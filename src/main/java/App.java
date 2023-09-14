@@ -1,6 +1,8 @@
 import com.demo.component.ArticleController;
 import com.demo.component.UserComponent;
 import com.demo.controller.StudentController;
+import com.demo.controller.UserAdviceController;
+import com.demo.controller.UserController;
 import com.demo.module.Student;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
@@ -10,7 +12,7 @@ import org.springframework.core.io.ClassPathResource;
 
 public class App {
     public static void main(String[] args) {
-        //1.先得到bean对象
+        /*//1.先得到bean对象
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 
         BeanFactory beanFactory = new XmlBeanFactory(new ClassPathResource("spring-config.xml"));
@@ -36,6 +38,15 @@ public class App {
         System.out.println(student);
 
         StudentController studentController = context.getBean("studentController", StudentController.class);
-        studentController.sayHi();
+        studentController.sayHi();*/
+
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
+
+        UserController uc = context.getBean("userController", UserController.class);
+        uc.getUser();
+
+        UserAdviceController ua = context.getBean("userAdviceController", UserAdviceController.class);
+        ua.getUser();
     }
 }
